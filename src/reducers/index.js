@@ -4,7 +4,7 @@ import loadingReducer from './loadingReducer';
 import networkReducer from './networkReducer';
 
 export default combineReducers({
-	currency: currencyReducer,
-	loading: loadingReducer,
-	network: networkReducer
+    currency: currencyReducer,
+    loading: loadingReducer,
+    network: networkReducer
 });
