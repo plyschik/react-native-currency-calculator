@@ -21,12 +21,12 @@ export const fetchApi = (currencyCode) => {
 		dispatch(toggleLoading());
 		dispatch(setCurrencyCode(currencyCode));
 
-        fetch('http://api.fixer.io/latest?base=' + getState().currency.code + '&symbols=PLN,EUR,USD,GBP,RUB,CHF,NOK,SEK')
-            .then(response => response.json())
-            .then(response => {
+		fetch('http://api.fixer.io/latest?base=' + getState().currency.code + '&symbols=PLN,EUR,USD,GBP,RUB,CHF,NOK,SEK')
+			.then(response => response.json())
+			.then(response => {
 				dispatch(setCurrencyRates(response.rates));
 				dispatch(toggleLoading());
-            })
-        ;
+			})
+		;
 	};
 };
