@@ -7,7 +7,7 @@ import thunk from 'redux-thunk';
 import reducers from './src/reducers';
 import Application from './src/Application';
 
-class currencyCalculator extends Component {
+class rnccGIT extends Component {
     store = createStore(
         reducers,
         applyMiddleware(thunk)
@@ -22,4 +22,4 @@ class currencyCalculator extends Component {
     }
 }
 
-AppRegistry.registerComponent('currencyCalculator', () => currencyCalculator);
+AppRegistry.registerComponent('rnccGIT', () => rnccGIT);
