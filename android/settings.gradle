@@ -1,0 +1,3 @@
+rootProject.name = 'rnccGIT'
+
+include ':app'
