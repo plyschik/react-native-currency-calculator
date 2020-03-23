@@ -22,7 +22,7 @@ class AboutApplicationScreen extends Component {
 
         return (
             <View style={ styles.container }>
-                <Text style={ styles.content }>Aplikacja została napisana przy pomocy React Native, Redux (react-redux, redux-thunk) oraz React Navigator. REST API: fixer.io (JSON).</Text>
+                <Text style={ styles.content }>Aplikacja została napisana przy pomocy React Native, Redux (react-redux, redux-thunk) oraz React Navigator. REST API: exchangeratesapi.io (JSON).</Text>
                 <Text style={[ styles.content, { marginTop: 50 } ]}>github.com/plyschik</Text>
             </View>
         );

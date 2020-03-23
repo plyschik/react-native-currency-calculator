@@ -1,5 +1,6 @@
 import { SET_CURRENCY_AMOUNT, SET_CURRENCY_CODE, SET_CURRENCY_RATES } from './actionTypes';
 import { toggleLoading } from './loadingActions';
+import currencies from '../currencies';
 
 export const setCurrencyAmount = (amount) => ({
 	type: SET_CURRENCY_AMOUNT,
@@ -21,7 +22,11 @@ export const fetchApi = (currencyCode) => {
 		dispatch(toggleLoading());
 		dispatch(setCurrencyCode(currencyCode));
 
-		fetch('http://api.fixer.io/latest?base=' + getState().currency.code + '&symbols=PLN,EUR,USD,GBP,RUB,CHF,NOK,SEK')
+		let symbols = currencies
+			.map(currency => currency.code)
+			.filter(code => code !== getState().currency.code);
+
+		fetch('https://api.exchangeratesapi.io/latest?base=' + getState().currency.code + '&symbols=' + symbols.join(','))
 			.then(response => response.json())
 			.then(response => {
 				dispatch(setCurrencyRates(response.rates));
